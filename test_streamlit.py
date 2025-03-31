@@ -1,5 +1,3 @@
-### agent_web.py (Streamlit 기반 Negotiation 시뮬레이션 - 화면 분할 및 스크롤 추가)
-
 import streamlit as st
 from utility.llm import get_llm_response
 from utility.logging import log
@@ -14,38 +12,49 @@ if 'round_number' not in st.session_state:
     st.session_state.accepted = False
     st.session_state.finished = False
     st.session_state.agent_log = []
+    st.session_state.user_id_confirmed = False
 
-st.title("🧠 Negotiation with John")
+st.title("Negotiation with John")
+st.image("john.jpg")
 
-# 사용자 ID 입력
-user_id = st.text_input("Enter your ID to begin:", key="user_id")
+# user ID 
+if not st.session_state.user_id_confirmed:
+    user_id_input = st.text_input("Enter your ID to begin:")
+    if user_id_input:
+        st.session_state.user_id = user_id_input
+        st.session_state.user_id_confirmed = True
+        log(f"User ID: {user_id_input}", user_id_input)
+else:
+    user_id = st.session_state.user_id
+    st.markdown(f"**User ID:** `{user_id}`")
 
-if user_id and not st.session_state.finished:
-    round_num = st.session_state.round_number
-    current_offer = st.session_state.opponent_offers[round_num - 1]
+    if not st.session_state.finished:
+        round_num = st.session_state.round_number
+        current_offer = st.session_state.opponent_offers[round_num - 1]
 
-    col1, col2 = st.columns(2)
+        col1, col2 = st.columns(2)
 
-    # 왼쪽 - Opponent Offer 및 요약
+    # Left- Opponent offer and my choice
     with col1:
-        st.markdown(f"### 🤝 Round {round_num} - Opponent Offer")
+        st.markdown(f"### Round {round_num} - Opponent Offer")
         st.markdown(f"- Price: **{current_offer[0]}**")
         st.markdown(f"- Warranty: **{current_offer[1]}**")
         st.markdown(f"- Option: **{current_offer[2]}**")
+        st.markdown(f"Previous offers: {st.session_state.opponent_offers[range(round_num-2)]}" )
 
-        # 행동 선택: 수락 또는 카운터 오퍼
+        # Accept or Propose a Counter-offer
         st.markdown("---")
         col_accept, col_counter = st.columns(2)
         with col_accept:
-            if st.button("✅ Accept Offer"):
+            if st.button("Accept Offer"):
                 st.success("You accepted the offer.")
                 st.session_state.accepted = True
                 st.session_state.finished = True
                 log("User accepted the offer", user_id)
 
         with col_counter:
-            counter_offer = st.text_input("💬 Counter Offer (e.g., 3,4,2)", key=f"counter_{round_num}")
-            if st.button("📨 Submit Counter Offer"):
+            counter_offer = st.text_input("Counter Offer (e.g., 3,4,2)", key=f"counter_{round_num}")
+            if st.button("Counter Offer"):
                 if counter_offer:
                     log(f"User Counter Offer: {counter_offer}", user_id)
                     st.session_state.round_number += 1
@@ -54,9 +63,9 @@ if user_id and not st.session_state.finished:
                 else:
                     st.warning("Please enter a valid counter offer.")
 
-    # 오른쪽 - Agent 대화 로그
+    # Right- conversation with Support Agent
     with col2:
-        st.markdown("### 🤖 Agent Support")
+        st.markdown("### Agent Support")
         agent_box = st.container()
 
         user_question = st.text_input("Ask your agent something:", key=f"q_{round_num}")
@@ -72,13 +81,13 @@ if user_id and not st.session_state.finished:
                 st.markdown(f"<b>You:</b> {q}<br><b>Agent:</b> {a}<hr>", unsafe_allow_html=True)
             st.markdown("</div>", unsafe_allow_html=True)
 
-# 협상 종료 요약
+# Summary for Negotiation
 if user_id and st.session_state.finished:
     final_offer = st.session_state.opponent_offers[st.session_state.round_number - 1 if st.session_state.round_number <= 6 else 5]
     final_response = "accept" if st.session_state.accepted else "no agreement"
 
     st.markdown("---")
-    st.markdown("## 📋 Negotiation Summary")
+    st.markdown("## Negotiation Summary")
     st.markdown(f"- User ID: `{user_id}`")
     st.markdown(f"- Rounds Played: `{min(st.session_state.round_number, 6)}`")
     st.markdown(f"- Final Opponent Offer: `{final_offer}`")
