@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import simpledialog, messagebox, scrolledtext
 from PIL import Image, ImageTk
-from utility.logging import log, log_json
+from utility.logging import log, log_json   # consider loggin in json file?
 from utility.llm import get_llm_response
 
 
@@ -10,21 +10,21 @@ class NegotiationApp:
         self.root = root
         self.root.title("Negotiation Simulation")
         self.round_number = 1
-        self.opponent = [[2, 3, 2], [2, 3, 3], [2, 4, 3], [3, 4, 3], [3, 4, 4], [4, 4, 4]]
+        self.opponent = [[2, 3, 2], [2, 3, 3], [2, 4, 3], [3, 4, 3], [3, 4, 4], [4, 4, 4]]  # opponent offer is set
         self.user_id = ""
 
         self.start_screen()
 
     def start_screen(self):
         self.clear_screen()
-        label = tk.Label(self.root, text="Enter Your ID to Start", font=("Arial", 14))
+        label = tk.Label(self.root, text="Enter Your ID to Start", font=("Arial", 14))  # enter ID
         label.pack(pady=10)
         self.id_entry = tk.Entry(self.root)
         self.id_entry.pack(pady=5)
-        start_button = tk.Button(self.root, text="Start Simulation", command=self.save_id)
+        start_button = tk.Button(self.root, text="Start Simulation", command=self.save_id) # saving ID 
         start_button.pack(pady=10)
 
-    def save_id(self):
+    def save_id(self):  # should define ID style
         self.user_id = self.id_entry.get().strip()
         if not self.user_id:
             messagebox.showwarning("Warning", "Please enter a valid ID")
@@ -36,7 +36,7 @@ class NegotiationApp:
         for widget in self.root.winfo_children():
             widget.destroy()
 
-    def main_screen(self):
+    def main_screen(self):  # left(opponent), right(agent)
         self.clear_screen()
 
         image = Image.open("john.jpg")
@@ -46,7 +46,7 @@ class NegotiationApp:
         image_label = tk.Label(self.root, image=self.photo)
         image_label.pack(pady=5)
 
-        title = tk.Label(self.root, text=f"Negotiation with John", font=("Arial", 14))
+        title = tk.Label(self.root, text=f"Negotiation with John", font=("Arial", 14))  # name of the agent
         title.pack(pady=5)
 
         self.frame = tk.Frame(self.root)
@@ -58,16 +58,16 @@ class NegotiationApp:
         self.right_text = scrolledtext.ScrolledText(self.frame, width=40, height=20, font=("Arial", 10), wrap=tk.WORD)
         self.right_text.grid(row=0, column=1, padx=5)
 
-        self.accept_button = tk.Button(self.root, text="Accept Offer", command=self.accept_offer, width=20, bg="lightgreen")
+        self.accept_button = tk.Button(self.root, text="Accept Offer", command=self.accept_offer, width=20, bg="lightgreen")    # Accept button
         self.accept_button.pack(pady=5)
 
-        self.counter_button = tk.Button(self.root, text="Counter Offer", command=self.counter_offer, width=20, bg="lightblue")
+        self.counter_button = tk.Button(self.root, text="Counter Offer", command=self.counter_offer, width=20, bg="lightblue")  # Counter-offer button
         self.counter_button.pack(pady=5)
 
         self.next_round()
 
     def next_round(self):
-        if self.round_number > 6:
+        if self.round_number > 10:   # 10 turns maximum
             self.left_text.insert(tk.END, "\nFinal Round reached. Negotiation ended.\n")
             log("Negotiation Ended: Final round without agreement.", self.user_id)
             self.summary()
@@ -76,7 +76,7 @@ class NegotiationApp:
 
         self.current_offer = self.opponent[self.round_number - 1]
         text = f"\n Round {self.round_number} - Opponent Offer: \nPrice-{self.current_offer[0]}, Waranty-{self.current_offer[1]}, service contract duration-{self.current_offer[2]}\n"
-        self.left_text.insert(tk.END, text)
+        self.left_text.insert(tk.END, text) # should add automatized benefit calculator?
         log(text.strip(), self.user_id)
 
     def accept_offer(self):

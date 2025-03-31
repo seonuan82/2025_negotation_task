@@ -1,5 +1,4 @@
 .env
 *.txt
 !requirements.txt
-log/*.txt
-log/*.json
+log\*.txt
