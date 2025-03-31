@@ -40,7 +40,8 @@ else:
         st.markdown(f"- Price: **{current_offer[0]}**")
         st.markdown(f"- Warranty: **{current_offer[1]}**")
         st.markdown(f"- Option: **{current_offer[2]}**")
-        st.markdown(f"Previous offers: {st.session_state.opponent_offers[range(round_num-2)]}" )
+        if round_num-2>=0:
+            st.markdown(f"Previous offers: {st.session_state.opponent_offers[range(round_num-2)]}" )
 
         # Accept or Propose a Counter-offer
         st.markdown("---")
