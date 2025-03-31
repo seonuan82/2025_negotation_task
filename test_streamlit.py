@@ -1,6 +1,6 @@
 import streamlit as st
-from utils.llm import get_llm_response
-from utils.logging import log
+from utility.llm import get_llm_response
+from utility.logging import log
 
 # 초기화
 if 'round_number' not in st.session_state:
