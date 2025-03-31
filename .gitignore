@@ -1,4 +1,4 @@
 .env
-/log
-log/
-temp.txt
+*.txt
+!requirements.txt
+log/*.txt
