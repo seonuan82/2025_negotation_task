@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 
 def log(text, user_id=""):
-    with open(f"log/negotiation_log_{user_id}.txt", "a", encoding="utf-8") as f:
+    with open(f"negotiation_log_{user_id}.txt", "a", encoding="utf-8") as f:
         f.write(text + "\n")
 
 def log_json(data, user_id):
