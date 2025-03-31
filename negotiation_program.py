@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import simpledialog, messagebox, scrolledtext
 from PIL import Image, ImageTk
-from utility.logging import log
+from utility.logging import log, log_json
 from utility.llm import get_llm_response
 
 
