@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from utils.llm import get_llm_response
-from utils.logging import log_json
+from utility.llm import get_llm_response
+from utility.logging import log_json
 
 app = FastAPI()
 

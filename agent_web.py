@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.llm import get_llm_response
+from utility.llm import get_llm_response
 
 st.title("Negotiation Agent")
 

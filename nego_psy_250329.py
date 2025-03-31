@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import simpledialog, messagebox, scrolledtext
 from PIL import Image, ImageTk
-from utils.logging import log
-from utils.llm import get_llm_response
+from utility.logging import log
+from utility.llm import get_llm_response
 
 
 class NegotiationApp:
