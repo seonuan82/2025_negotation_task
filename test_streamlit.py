@@ -82,7 +82,7 @@ else:
             st.markdown("</div>", unsafe_allow_html=True)
 
 # Summary for Negotiation
-if user_id and st.session_state.finished:
+if st.session_state.finished:
     final_offer = st.session_state.opponent_offers[st.session_state.round_number - 1 if st.session_state.round_number <= 6 else 5]
     final_response = "accept" if st.session_state.accepted else "no agreement"
 
