@@ -1,0 +1,5 @@
+
+--- Round 1 ---
+Opponent Offer: [2, 3, 2]
+Agent Support - Counter Offer: [2, 3, 2]
+Agent Response: Based on the offer [2, 3, 2], it appears to be a combination of numbers. It is difficult to provide specific advice without more context about what the offer entails. If you are considering accepting or acting on this offer, be sure to carefully evaluate the terms and implications of the numbers presented. Consider seeking additional information or clarification before making a decision.

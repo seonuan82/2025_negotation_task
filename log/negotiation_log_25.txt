@@ -1,0 +1,30 @@
+User ID: 25
+Round 1 - Opponent Offer: 
+Price-2, Waranty-3, number three-2
+User Response: counter-offer
+User Question to Agent: i want more
+Agent Response: What would you like more of? Can you give me some more information so I can assist you better?
+User Counter Offer: 3,4,4
+Round 2 - Opponent Offer: 
+Price-2, Waranty-3, number three-3
+User Response: counter-offer
+User Counter Offer: 3,5,5
+Round 3 - Opponent Offer: 
+Price-2, Waranty-4, number three-3
+User Response: counter-offer
+User Counter Offer: 6,6,6
+Round 4 - Opponent Offer: 
+Price-3, Waranty-4, number three-3
+User Response: counter-offer
+User Question to Agent: finish'
+Agent Response: ed.
+User Counter Offer: 6,5,5
+Round 5 - Opponent Offer: 
+Price-3, Waranty-4, number three-4
+User Response: counter-offer
+User Counter Offer: 6,6,6
+Round 6 - Opponent Offer: 
+Price-4, Waranty-4, number three-4
+User Response: counter-offer
+User Counter Offer: 6,6,6
+Negotiation Ended: Final round without agreement.

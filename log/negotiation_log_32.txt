@@ -1,0 +1,19 @@
+User ID: 32
+Round 1 - Opponent Offer: 
+Price-2, Waranty-3, number three-2
+User Response: counter-offer
+User Question to Agent: i don't know
+Agent Response: That's okay! Is there something specific you are trying to figure out or do you need help with? Feel free to ask any questions you may have.
+User Question to Agent: okay okay
+Agent Response: Great, let me know if there's anything else I can help with!
+User Counter Offer: 3,3,3
+Round 2 - Opponent Offer: 
+Price-2, Waranty-3, number three-3
+User Response: accept
+Summary:
+To improve your negotiation skills, consider the following tips:
+1. Prepare thoroughly before the negotiation by understanding your goals, priorities, and potential trade-offs.
+2. Practice active listening to truly understand the other party's perspective and interests.
+3. Maintain a calm and respectful demeanor throughout the negotiation process.
+4. Be open to exploring creative solutions and compromises that benefit both parties.
+5. Continuously seek feedback and reflect on your negotiation experiences to identify areas for improvement.

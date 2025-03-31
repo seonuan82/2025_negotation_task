@@ -1,0 +1,34 @@
+User ID: 26
+User ID: 26
+Round 1 - Opponent Offer: 
+Price-2, Waranty-3, number three-2
+User Response: counter-offer
+User Question to Agent: I don't know what I should do
+Agent Response: It's normal to feel uncertain about what to do in certain situations. Here are some steps you can take to help make a decision:
+
+1. Take a step back and assess the situation. Consider the options available to you and the potential outcomes of each.
+
+2. Gather information and seek advice from others who may have experience or expertise in the matter.
+
+3. Trust your instincts and listen to your gut feeling. Sometimes our intuition can guide us in the right direction.
+
+4. Make a pros and cons list to weigh the benefits and drawbacks of each option.
+
+5. Take your time to make a decision, but also be mindful of any time constraints that may be involved.
+
+Remember, it's okay to seek help and support from others when you're feeling unsure. Trust that you have the capability to make the best decision for yourself.
+User Question to Agent: finisdh
+Agent Response: Thank you for using the assistant. If you have any more questions or need assistance in the future, feel free to ask. Have a great day!
+User Counter Offer: 2,2,2
+Round 2 - Opponent Offer: 
+Price-2, Waranty-3, number three-3
+User Response: accept
+Summary:
+To improve your negotiation skills, you can consider the following tips:
+1. Understand your priorities and objectives before entering negotiations.
+2. Be prepared to walk away if the final offer does not meet your minimum requirements.
+3. Practice active listening and communication to understand the other party's perspective.
+4. Be willing to compromise and find mutually beneficial solutions.
+5. Continuously work on building rapport and trust with the other party.
+6. Seek feedback from others on your negotiation style and areas of improvement.
+7. Learn from each negotiation experience and apply those lessons to future negotiations.
