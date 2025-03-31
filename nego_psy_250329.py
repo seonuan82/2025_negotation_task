@@ -75,7 +75,7 @@ class NegotiationApp:
             return
 
         self.current_offer = self.opponent[self.round_number - 1]
-        text = f"\n Round {self.round_number} - Opponent Offer: \nPrice-{self.current_offer[0]}, Waranty-{self.current_offer[1]}, number three-{self.current_offer[2]}\n"
+        text = f"\n Round {self.round_number} - Opponent Offer: \nPrice-{self.current_offer[0]}, Waranty-{self.current_offer[1]}, service contract duration-{self.current_offer[2]}\n"
         self.left_text.insert(tk.END, text)
         log(text.strip(), self.user_id)
 
